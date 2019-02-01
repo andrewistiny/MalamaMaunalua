@@ -1,8 +1,8 @@
 # Malama Maunalua App
 FLAAMERS<br />
-Matthew Favela
-Andrew Leachman
-Elijah Richards
+Matthew Favela<br />
+Andrew Leachman<br />
+Elijah Richards<br />
 Aaron Soma
 
 ## Project Challenge
