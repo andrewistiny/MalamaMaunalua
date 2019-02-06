@@ -12,27 +12,38 @@ Malama Maunalua, a non-profit, needs a better way to get, store, and visualize i
 Our team will be creating an application for families that adopt plots of land to take care of in the Maunalua Bay, our app will allow families to upload what they did each day, how much algae they removed, how long it took, etc. 
 
 ## Project Plan
-List the milestones in your project and high level tasks for each, for example:
-- Create Design Wireframes and Mockups.
-    - Wireframe for page 1
-    - Wireframe for page 2
-    - Design Mockup for page 1
-    - Design Mockup for page 2
-- Set up project file structure
-    - Determine workflow, who will be project manager and maintainer of repo
-    - Determine directory and file naming conventions and locations
-- Begin client-side development
-    - List of client-side tasks
-- Begin server-side development
-    - List of server-side tasks
-- Style client-side app
-    - Create css file for page 1
-    - Create css file for page 2
-- Create video demo
-- Create presentation
-- Stretch Goals 
-    - Stretch Goal 1
-    - Stretch Goal 2
+
+-FRONT END--
+1. Setup Home page html, css, js
+2. Create html, css and js files for adopt-a-plotters, organizations (businesses), huki, and find-my-plot pages.
+3. Link all the pages with buttons
+
+--HOME PAGE--
+1. Non-Profit Info
+2. Links to other pages
+3. Graphs/Pie Charts/Visual Data
+
+--ADOPT-A-PLOTTERS PAGE--
+1. Info/Signup
+2. Form
+
+--ORGANIZATIONS PAGE--
+1. Info/Signup - pick a date
+2. Form
+
+--HUKI PAGE--
+1. Coming Dates, Info
+2. Form for Administrators 
+
+--FIND MY PLOT PAGE--
+1. Map 
+2. Input Coords ^
+3. Plot Desegnation Info
+
+--BACK END--
+1. Create database (MalamaWarriors)
+2. Create datatables for pass/email, adopt-a-plotters, organizations (businesses/schools), and huki
+    Information it will take in: id (serial), plot lat/long, time spent, bags collected, particpating members, 
     
 ## Key Findings
 Explain your hurdles throughout the project and how your team overcame them. Show how your project changed or scope changed throughout the development of your solution.
