@@ -1,0 +1,8 @@
+{
+    "table": "movieList",
+    "host": "jrdevleague.cb9co1xxtizk.us-west-2.rds.amazonaws.com",
+    "database": "hta_andrew",
+    "user": "andrewistiny",
+    "password": "1503619",
+    "port": 5432
+  }

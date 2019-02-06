@@ -1,54 +1,84 @@
-# Malama Maunalua App
-FLAAMERS<br />
-Matthew Favela - <br />
-Andrew Leachman - Group Leader, Backend Mostly<br />
-Elijah Richards - Designer & Page Layout + Assist w/Frontend & Backend<br />
-Aaron Soma - 
+# Movie List
 
-## Project Challenge
-Malama Maunalua, a non-profit, needs a better way to get, store, and visualize information about their Adopt-a-Plot program.
+[Advanced] AWS, S3, Api-Gatway, Lambda, RDS, Serverless - Intro full stack project using amazon rds
 
-## Project Proposal
-Our team will be creating an application for families that adopt plots of land to take care of in the Maunalua Bay, our app will allow families to upload what they did each day, how much algae they removed, how long it took, etc. 
+## Objective
+You will be creating a full stack application. A client will be able to make HTTP requests to a PostgreSQL database through Amazon RDS.
 
-## Project Plan
+## Project Example 
+[movie list](http://movie-list-jay.s3-website-us-west-2.amazonaws.com/index.html)
 
--FRONT END--
-1. Setup Home page html, css, js
-2. Create html, css and js files for adopt-a-plotters, organizations (businesses), huki, and find-my-plot pages.
-3. Link all the pages with buttons
+## Prerequisites
+- Basic understanding of API's.
+- Basic understanding of JSON.
+- Basic understanding of AWS Lambda
+- Basic understanding of Amazon S3
+- Basic understanding of Amazon API-Gateway
+- Basic understanding of Serverless & CLI
+- Basic understanding of AWS CLI
+- Basic understanding of PostgreSQL
+- Basic understanding of HTTP Methods
 
---HOME PAGE--
-1. Non-Profit Info
-2. Links to other pages
-3. Graphs/Pie Charts/Visual Data
+## Setup
+- Fork and Clone Repo
+- Create serverless template 
+- Create `package.json` file
+- npm install `pg`
+- npm install `pg-pool`
 
---ADOPT-A-PLOTTERS PAGE--
-1. Info/Signup
-2. Form
 
---ORGANIZATIONS PAGE--
-1. Info/Signup - pick a date
-2. Form
+#### File Structure 
+```
+movie-list
+|
++-- public
+|    |
+|    +-- edit
+|    |   |
+|    |   +-- edit.js
+|    |   +-- edit.html
+|    |   +-- edit.css
+|    +-- post
+|    |   |
+|    |   +-- post.js
+|    |   +-- post.html
+|    |   +-- post.css
+|    +-- index.html
+|    +-- index.js
+|    +-- index.css
++-- routes
+|    |
+|    +-- get.js
+|    +-- post.js
+|    +-- update.js
+|    +-- delete.js
++-- test-data
+|    +-- delete.json
+|    +-- post.json
+|    +-- update.json
++-- config.json
++-- node_modules
++-- .gitignore
++-- package-lock.json
++-- package.json
++-- serverless.yml
+```
 
---HUKI PAGE--
-1. Coming Dates, Info
-2. Form for Administrators 
+# Back-End
+Connect to remote AWS RDS Postgres
 
---FIND MY PLOT PAGE--
-1. Map 
-2. Input Coords ^
-3. Plot Desegnation Info
-
---BACK END--
-1. Create database (MalamaWarriors)
-2. Create datatables for pass/email, adopt-a-plotters, organizations (businesses/schools), and huki
-    Information it will take in: id (serial), plot lat/long, time spent, bags collected, particpating members, 
-    
-## Key Findings
-Explain your hurdles throughout the project and how your team overcame them. Show how your project changed or scope changed throughout the development of your solution.
-
-## Skills Learned
-Explain what your team learned in developing this project. 
-
-**Note: Include a short description in the repo description field when creating your team's repo, also include a link to your final prototype.**
+- When connected to your database, create a table with the following columns:
+  - movie_id
+  - movie_title
+  - movie_year_released
+  - movie_genre
+  
+- Create GET, POST, PUT, DELETE routes
+  
+ # Front-End
+ - Homepage should `GET` all movies from backend
+ - Create a link that directs you to a `POST` form
+ - Create a link that directs you to `EDIT` form
+ 
+ **HINT** Use [Local Storage](https://github.com/junior-devleague/local-storage-demo) to save movie_id when you redirect to `EDIT` form 
+ 
