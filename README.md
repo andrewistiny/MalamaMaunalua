@@ -1,9 +1,9 @@
 # Malama Maunalua App
 FLAAMERS<br />
-Matthew Favela<br />
-Andrew Leachman<br />
-Elijah Richards<br />
-Aaron Soma
+Matthew Favela - <br />
+Andrew Leachman - <br />
+Elijah Richards - Designer & Page Layout + Assist w/Frontend & Backend<br />
+Aaron Soma - 
 
 ## Project Challenge
 Malama Maunalua, a non-profit, needs a better way to get, store, and visualize information about their Adopt-a-Plot program.
