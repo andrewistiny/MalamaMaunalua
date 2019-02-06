@@ -1,7 +1,7 @@
 # Malama Maunalua App
 FLAAMERS<br />
 Matthew Favela - <br />
-Andrew Leachman - <br />
+Andrew Leachman - Group Leader, Backend Mostly<br />
 Elijah Richards - Designer & Page Layout + Assist w/Frontend & Backend<br />
 Aaron Soma - 
 
