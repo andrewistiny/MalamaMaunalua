@@ -1,8 +1,8 @@
 {
-    "table": "movieList",
+    "table": "email_pass",
     "host": "jrdevleague.cb9co1xxtizk.us-west-2.rds.amazonaws.com",
-    "database": "hta_andrew",
-    "user": "andrewistiny",
-    "password": "1503619",
+    "database": "malama_db",
+    "user": "malama_warriors",
+    "password": "rlfa123",
     "port": 5432
   }

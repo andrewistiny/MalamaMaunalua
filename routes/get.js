@@ -13,12 +13,12 @@ const pool = new Pool({
 
 module.exports.get = (event, context, callback) => {
 
-  const getMovie = `SELECT * FROM ${table};`;
+  const get = `SELECT * FROM ${table};`;
 
   pool.connect()
     .then(client => {
       client.release()
-      return client.query(getMovie)
+      return client.query(get)
     })
     .then(res => {
 

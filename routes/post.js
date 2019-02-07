@@ -11,21 +11,21 @@ const pool =  new  Pool({
   idleTimeoutMillis: 1000
 });
 
-module.exports.postMovie = (event, context, callback) => {
+module.exports.post = (event, context, callback) => {
 console.log('event', event);
-const movie_name = event.body.movie_title;
-const movie_genre = event.body.movie_genre;
-const movie_year = event.body.movie_year_released;
-  const postNewMovie = `INSERT INTO ${table} VALUES(default, $1, $2, $3)`;
-  
+  const post = `INSERT INTO ${table} VALUES(default, $1, $2)`;
+  const combo_id = event.body.combo_id;
+  const email = event.body.email;
+  const pass = event.body.pass;
+
   pool.connect()
   .then(client => {
     client.release()
-    return client.query(postNewMovie, [movie_name, movie_year, movie_genre]);
+    return client.query(post, [email, pass]);
   })
   .then(res => {
   const response = {
-    statusCode: 200,
+    statusCode: 200, 
     headers: {
       'Access-Control-Allow-Origin': 'http://127.0.0.1:8080',
       'Access-Control-Allow-Credentials': true

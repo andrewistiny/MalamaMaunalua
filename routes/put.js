@@ -11,18 +11,17 @@ const pool =  new  Pool({
   idleTimeoutMillis: 1000
 });
 
-module.exports.updateMovie = (event, context, callback) => {
+module.exports.update = (event, context, callback) => {
 console.log('event', event);
-const movie_id = event.body.movie_id;
-const movie_name = event.body.movie_title;
-const movie_genre = event.body.movie_genre;
-const movie_year = event.body.movie_year_released;
-  const upadateMovieInfo = `UPDATE ${table} SET  movie_title = $2, movie_year_released = $3, movie_genre = $4 WHERE movie_id = $1;`;
-  console.log(upadateMovieInfo, "update");
+  const combo_id = event.body.combo_id;
+  const email = event.body.email;
+  const pass = event.body.pass;
+  const update = `UPDATE ${table} SET  email = $2, pass = $3 WHERE combo_id = $1;`;
+  console.log(update, "update");
   pool.connect()
   .then(client => {
     client.release()
-    return client.query(upadateMovieInfo, [movie_id, movie_name, movie_year, movie_genre]);
+    return client.query(update, [combo_id, email, pass]);
   })
   .then(res => {
   const response = {

@@ -13,13 +13,13 @@ const pool =  new  Pool({
 
 module.exports.deleteMovie = (event, context, callback) => {
 console.log('event', event);
-const movie_id = event.body.movie_id;
-  const deleteMovieInfo = `DELETE FROM ${table} WHERE movie_id = $1`;
+const combo_id = event.body.combo_id;
+  const deleteMM = `DELETE FROM ${table} WHERE combo_id = $1`;
   
   pool.connect()
   .then(client => {
     client.release()
-    return client.query(deleteMovieInfo, [movie_id]);
+    return client.query(deleteMM, [movie_id]);
   })
   .then(res => {
   const response = {

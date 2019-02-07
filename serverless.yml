@@ -62,34 +62,34 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
- getMovie:
+ get:
    handler: routes/get.get
    events:
      - http:
-         path: getMovie
+         path: get
          method: get
          cors: true
- postMovie:
-   handler: routes/post.postMovie
+ post:
+   handler: routes/post.post
    events:
      - http:
-         path: postMovie
+         path: post
          method: post
          cors: true
          integration: lambda
- updateMovie:
-   handler: routes/put.updateMovie
+ update:
+   handler: routes/put.update
    events:
      - http:
-         path: updateMovie
+         path: update
          method: put
          cors: true
          integration: lambda
- deleteMovie:
-   handler: routes/delete.deleteMovie
+ delete:
+   handler: routes/delete.delete
    events:
      - http:
-         path: deleteMovie
+         path: delete
          method: delete
          cors: true
          integration: lambda
