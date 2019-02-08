@@ -1,9 +1,9 @@
 # Malama Maunalua App
 FLAAMERS<br />
-Matthew Favela - <br />
+Matthew Favela - Frontend, Backend, Visuals, and Everything<br />
 Andrew Leachman - Group Leader, Backend Mostly<br />
 Elijah Richards - Designer & Page Layout + Assist w/Frontend & Backend<br />
-Aaron Soma - 
+Aaron Soma - Designer & Page Layout
 
 ## Project Challenge
 Malama Maunalua, a non-profit, needs a better way to get, store, and visualize information about their Adopt-a-Plot program.
