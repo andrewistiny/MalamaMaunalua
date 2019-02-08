@@ -1,13 +1,14 @@
 
 
-#login-page-redirect{
-background: #ee7836;    
+.page-redirect{ 
 font-size: 1.077em;
 text-decoration: none;
 padding: 10px;
 padding-left: 15px;
 padding-right: 15px;
 cursor: pointer;
+background: transparent;
+border: none;
 }
 
 #login-button{
@@ -61,4 +62,9 @@ cursor: pointer;
     text-decoration: none;
     color: black;
     border: none;
+}
+
+#nav-bar{
+  background: #0ea0d7;
+  padding: 10px;
 }

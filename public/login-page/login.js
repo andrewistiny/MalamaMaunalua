@@ -40,15 +40,17 @@ let pressed = function () {
                         break;
                     }
                 }
+                function changeHTML(){
+                    console.log(auth)
+                    if(auth.loggedIn === true){
+                        console.log("LOGGED IN SUCCESSFULLY")
+                    }
+                    namePlaceholder.innerHTML = tempEmail;
+                }
+
+
                 console.log('authObj', auth);
             })
-            function changeHTML(){
-                console.log(auth)
-                if(auth.loggedIn === true){
-                    console.log("LOGGED IN SUCCESSFULLY")
-                }
-                namePlaceholder.innerHTML = auth.email;
-            }
         
         })
         .then(function (response) {
