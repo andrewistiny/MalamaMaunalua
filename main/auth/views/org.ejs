@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg">
+
+        <h1>MM</h1>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item disabled">
+                    <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/aap">Adopt-A-Plotters</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/org">Organizations </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/huki">Huki</a>
+                </li>
+                <li class="nav-item active">
+                        <a class="nav-link" href="/fmp">FindMyPlot</a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <%= user.name %>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">User Settings</a>
+                        <a href="/users/logout" class="dropdown-item">Logout</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item">Malama Maunalua</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <style type="text/css">
+        nav { background: #0ea0d7}
+        .nav-link { color: white}
+        h1 {color: white};
+     </style>

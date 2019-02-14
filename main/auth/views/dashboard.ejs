@@ -1,0 +1,75 @@
+
+  <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        const data = google.visualization.arrayToDataTable([
+          ['Task', 'Average Bags Per Month'],
+          ['Adopters',     25],
+          ['Huki',      65],
+          ['Organizations',  15]
+        ]);
+
+        const options = {
+          title: 'Average Bags per Month'
+        };
+
+        const chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+
+    </script>
+
+
+
+<nav class="navbar navbar-expand-lg">
+
+    <h1 class="">MM</h1>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item disabled">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/aap">Adopt-A-Plotters</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/org">Organizations </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/huki">Huki</a>
+            </li>
+            <li class="nav-item active">
+                    <a class="nav-link" href="/fmp">FindMyPlot</a>
+                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <%= user.name %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#"><i class="fas fa-cog"></i>User Settings</a>
+                    <a href="/users/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Malama Maunalua</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<style type="text/css">
+    nav { background: #0ea0d7}
+    .nav-link { color: white}
+    h1 {color: white};
+ </style>
+
+<div id="piechart" class="col-md-5 col-md-push-8"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="./js/dashboard.js"></script>
