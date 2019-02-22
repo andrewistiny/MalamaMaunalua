@@ -1,8 +1,0 @@
-{
-    "table": "email_pass",
-    "host": "jrdevleague.cb9co1xxtizk.us-west-2.rds.amazonaws.com",
-    "database": "malama_db",
-    "user": "malama_warriors",
-    "password": "rlfa123",
-    "port": 5432
-  }
