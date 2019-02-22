@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <title>Home</title>
+</head>
+<body>
+    
+
+    <nav class="nav-bar">
+        <button class="page-redirect">
+            <a href="login-page/login.html" class="href" id="login-button">Login</a>
+        </button>
+        <button class="page-redirect">
+            <a href="adopt-a-plotters/aap.html" class="href" id="adopt-button">Adopt-A-Plotter</a>
+        </button>
+        <button class="page-redirect">
+            <a href="organizations/org.html" class="href" id="organization-button">Organizations</a>
+        </button>
+        <button class="page-redirect">
+            <a href="huki/huki.html" class="href" id="huki-button">Huki</a>
+        </button>
+        <button class="page-redirect">
+            <a href="find-my-plot/fmp.html" class="href" id="findplot-button">Find My Plot</a>
+        </button>
+        <button class="page-redirect">
+            <a href="http://www.malamamaunalua.org/" class="href" id="malama-button">Our Website</a>
+        </button>
+        <div id="account-div">
+            <span id="account-name-placeholder">Administrator</span>
+      <div id="dropdown-content">
+        <button id="settings-page-redirect">
+            <a href="settings/settings.html" class="href" id="setting-dropdown-text">Account Settings</a>
+        </button>
+      </div>
+        </div>
+    </nav>
+    <div id="temp"></div>
+     
+
+
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="login-page/login.js"></script>
+    <script src="home.js"></script>
+
+</body>
+</html>
