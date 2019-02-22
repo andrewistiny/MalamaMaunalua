@@ -37,7 +37,8 @@ router.get('/fmp', ensureAuthenticated, (req, res) =>
 router.get('/huki', ensureAuthenticated, (req, res) =>
   res.render('huki', {
     user: req.user
-  })
+  }),
 );
+
 
 module.exports = router;

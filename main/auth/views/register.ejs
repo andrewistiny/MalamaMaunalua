@@ -1,3 +1,23 @@
+<script>
+
+let longlat = function(){
+  let form = document.getElementById("form");
+  let createDiv = document.createElement("div");
+  let createInput = document.createElement("input");
+  createInput.type = "input";
+  createInput.id = "latitude";
+  createInput.name = "latitude";
+  createInput.class = "form-control";
+  createInput.placeHolder = "Enter Latitude";
+  createDiv.class = "form-group";
+  createDiv.appendChild(createInput);
+  console.log(createDiv)
+  console.log(createInput)
+  console.log('working!');
+}
+
+</script>
+
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
     <div class="card card-body">
@@ -6,7 +26,7 @@
         <i class="fas fa-user-plus"></i> Register
       </h1>
       <% include ./partials/messages %>
-      <form action="/users/register" method="POST">
+      <form action="/users/register" method="POST" id="form">
         <div class="form-group">
           <label for="name">Name</label>
           <input
@@ -51,6 +71,8 @@
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
           />
         </div>
+        <input type="checkbox" name="aap" value="" onChange="longlat()"> Are you an adopt-a-plotter?<br>
+        
         <button type="submit" class="btn btn-primary btn-block">
           Register
         </button>

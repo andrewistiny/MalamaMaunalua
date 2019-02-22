@@ -1,5 +1,3 @@
-# package directories
-node_modules
-jspm_packages
-config.json
-keys.js
+#super secrety stuff
+config/auth.js
+/node_modules
