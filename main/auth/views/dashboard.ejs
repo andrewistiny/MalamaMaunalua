@@ -1,35 +1,7 @@
-<!--Load the AJAX API-->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['corechart']
-    });
-    google.charts.setOnLoadCallback(drawChart);
+<head>
 
-    function drawChart() {
-
-        const data = google.visualization.arrayToDataTable([
-            ['Task', 'Average Bags Per Month'],
-            ['Adopters', 25],
-            ['Huki', 65],
-            ['Organizations', 15]
-        ]);
-
-        const options = {
-            title: 'Average Bags per Month'
-        };
-
-        const chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-    }
-</script>
-
-
-
- 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</head>
 
 <nav class="navbar navbar-expand-lg">
 
@@ -70,6 +42,58 @@
 <h6>Our vision:<br>A Maunalua Bay where marine life is abundant, the water is clean and clear, and people take kuleana
     in caring for the Bay.</h6>
 
+
+
+
+
+
+    <canvas id="myChart"></canvas>
+
+<script>
+
+
+
+    let myChart = document.getElementById("myChart").getContext('2d');
+
+    Chart.defaults.global.defaultFontFamily = 'Roboto';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = "#777";
+
+    let mainChart = new Chart(myChart, {
+        type: 'pie', //type of bar here
+        data: {
+            labels:['Adopt A Plotters', 'Orgainzations', 'Huki '],
+            datasets:[{
+                label: 'Pounds of Algae Collected',
+                data:[
+                    23,
+                    65,
+                    123 
+                ],
+                backgroundColor: [
+                    '#E1C74F',
+                    '#53B1D9',
+                    '#72AD47'
+                ],
+                borderWidth: 3,
+                borderColor: '#777',
+                hoverBorderWidth: 3,
+                hoverBorderColor: 'black'
+            }]
+        },
+        options:{
+            title:{
+                display: true,
+                text: 'Total Bags of Algae Collected'
+                
+        }
+        }
+
+    });
+</script>
+
+
+
 <style type="text/css">
     nav {
         background: #0ea0d7
@@ -82,6 +106,13 @@
     h1 {
         color: white
     }
+    canvas{
+        width: 50px;
+        height: 50px;
+    }
+    #myChart{
+        position: absolute;
+    }
     @media (min-width: 768px) and (max-width: 1000px) {
    .collapse {
        display: none !important;
@@ -91,7 +122,7 @@
 
 
 
-<div id="piechart" class="col-md-5 col-md-push-8"></div>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
 <script src="./js/dashboard.js"></script>

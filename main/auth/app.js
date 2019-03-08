@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
-const browserSync = require('browser-sync')
+const browserSync = require('browser-sync');
+const chartjs = require('chart.js');
 
 const app = express();
 
