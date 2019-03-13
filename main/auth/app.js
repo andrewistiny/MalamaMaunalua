@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
@@ -7,7 +9,11 @@ const session = require('express-session');
 const browserSync = require('browser-sync');
 const chartjs = require('chart.js');
 
+var cors = require('cors')
 const app = express();
+
+ 
+app.use(cors())
 
 // Passport Config
 require('./config/passport')(passport);
@@ -56,8 +62,8 @@ app.use(function(req, res, next) {
 });
 
 // Routes
-app.use('/', require('./routes/index.js'));
-app.use('/users', require('./routes/users.js'));
+app.use('/', require('./endpoints/index.js'));
+app.use('/users', require('./endpoints/users.js'));
 
 const PORT = process.env.PORT || 5000;
 

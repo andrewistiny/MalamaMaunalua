@@ -39,8 +39,7 @@
     </div>
 </nav>
 
-<h6>Our vision:<br>A Maunalua Bay where marine life is abundant, the water is clean and clear, and people take kuleana
-    in caring for the Bay.</h6>
+
 
 
 
@@ -113,6 +112,11 @@
     #myChart{
         position: absolute;
     }
+
+
+
+
+    
     @media (min-width: 768px) and (max-width: 1000px) {
    .collapse {
        display: none !important;
@@ -122,7 +126,16 @@
 
 
 
-
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-<script src="./js/dashboard.js"></script>
+<script>
+
+axios.get(`https://hu37ucyu34.execute-api.us-west-2.amazonaws.com/dev/getAdoptAPlot`)
+        .then(function (response) {
+            console.log('Successfully Connected To Database!', response);
+        }).catch((err)=>{
+            console.log(err);
+        })
+
+
+</script>

@@ -2,3 +2,4 @@
 config/auth.js
 /node_modules
 /config
+config.json
