@@ -13,7 +13,7 @@ const pool = new Pool({
 
 module.exports.getAdoptAPlot = (event, context, callback) => {
 
-  const get = `SELECT * FROM ${table};`;
+  const get = `SELECT * FROM adoptaplot`;
 
   pool.connect()
     .then(client => {
@@ -50,7 +50,7 @@ module.exports.getAdoptAPlot = (event, context, callback) => {
 
 module.exports.getHuki = (event, context, callback) => {
 
-  const get = `SELECT * FROM ${table};`;
+  const get = `SELECT * FROM huki;`;
 
   pool.connect()
     .then(client => {
@@ -87,7 +87,7 @@ module.exports.getHuki = (event, context, callback) => {
 
 module.exports.getOrganizations = (event, context, callback) => {
 
-  const get = `SELECT * FROM ${table};`;
+  const get = `SELECT * FROM organization;`;
 
   pool.connect()
     .then(client => {
