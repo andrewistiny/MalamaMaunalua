@@ -92,7 +92,7 @@ module.exports.postHuki = (event, context, callback) => {
       pool.connect()
       .then(client => {
         client.release()
-        return client.query(post, [time, bagsCollected, numberOfParticipants, organizationName]);
+        return client.query(post, [timeSpentMins, bagsCollected, numberOfParticipants, organizationName]);
       })
       .then(res => {
       const response = {

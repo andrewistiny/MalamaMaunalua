@@ -1,68 +1,82 @@
 <nav class="navbar navbar-expand-lg">
 
-        <h1>MM</h1>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item disabled">
-                    <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/aap">Adopt-A-Plotters</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/org">Organizations </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/huki">Huki</a>
-                </li>
-                <li class="nav-item active">
-                        <a class="nav-link" href="/fmp">FindMyPlot</a>
-                    </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <%= user.name %>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">User Settings</a>
-                        <a href="/users/logout" class="dropdown-item">Logout</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item">Malama Maunalua</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    
-    <style type="text/css">
-        nav { background: #0ea0d7}
-        .nav-link { color: white}
-        h1 {color: white};
-     </style>
+    <h1>MM</h1>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item disabled">
+                <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/aap">Adopt-A-Plotters</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/org">Organizations </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/huki">Huki</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/fmp">FindMyPlot</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <%= user.name %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">User Settings</a>
+                    <a href="/users/logout" class="dropdown-item">Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Malama Maunalua</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<style type="text/css">
+    nav {
+        background: #0ea0d7
+    }
+
+    .nav-link {
+        color: white
+    }
+
+    h1 {
+        color: white
+    }
+
+    ;
+</style>
 
 
 <div class="row mt-5" id="form-container">
     <div class="col-md-6 m-auto">
         <div class="card card-body">
-            <form action="" method="" onsubmit="return true" id="huki-form">
+            <form action="/" method="post" onsubmit="return true" id="huki-form">
                 <div class="form-group">
                     <label for="input">Number of Participants</label>
-                    <input type="input" id="participants" name="participants" class="form-control" placeholder="Enter # of Participants" />
+                    <input type="input" id="participants" name="participants" class="form-control"
+                        placeholder="Enter # of Participants" />
                 </div>
                 <div class="form-group">
                     <label for="input">Bags Collected</label>
-                    <input type="input" id="bagscollected" name="bagscollected" class="form-control" placeholder="Enter Bags Collected" />
+                    <input type="input" id="bagscollected" name="bagscollected" class="form-control"
+                        placeholder="Enter Bags Collected" />
                 </div>
                 <div class="form-group">
-                    <label for="input">Time Spent</label>
-                    <input type="input" id="timespent" name="timespent" class="form-control" placeholder="Enter Minutes" />
+                    <label for="input">Time Spent (mins)</label>
+                    <input type="input" id="timespent" name="timespent" class="form-control"
+                        placeholder="Enter Minutes" />
                 </div>
                 <div class="form-group">
                     <label for="input">Date</label>
                     <input type="date" id="date" name="date" class="form-control" placeholder="" />
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block" id="submit-button">Enter Huki Information</button>
+                <button type="submit" class="btn btn-primary btn-block" id="submit-button">Enter Huki
+                    Information</button>
 
             </form>
             <style type="text/css">
@@ -73,6 +87,7 @@
                 button {
                     border-radius: 0% !important;
                 }
+
                 #date {
                     color: gray;
                 }
@@ -80,3 +95,41 @@
         </div>
     </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    const submitButton = document.querySelector('#submit-button');
+    const hukidate = document.querySelector('#date');
+    const hukitimespent = document.querySelector('#timespent');
+    const hukibagscollected = document.querySelector('#bagscollected');
+    const hukiparticipants = document.querySelector('#participants');
+
+    submitButton.addEventListener('click', function () {
+        event.preventDefault();
+                let data = {
+                    date: hukidate.value,
+                    bagscollected: parseInt(hukibagscollected.value),
+                    participants: parseInt(hukiparticipants.value),
+                    timespent: parseInt(hukitimespent.value)
+                }
+
+               
+
+                axios.post(`https://hu37ucyu34.execute-api.us-west-2.amazonaws.com/dev/postHuki`, data)
+                    .then (function () {
+                            console.log("POST ACTIVATED");
+                            console.log("DATA", data)
+                        })  
+                        .catch(function (err) {
+                            console.log('Errors = None // ', err);
+                        }) 
+                    })
+
+//.then(()=>{
+//     return axios.get('https://hu37ucyu34.execute-api.us-west-2.amazonaws.com/dev/getHuki')
+//                             .then (response=>{
+//                                 console.log('response', response);
+//                             })
+//                         })
+</script>

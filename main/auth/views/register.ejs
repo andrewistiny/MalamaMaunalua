@@ -1,54 +1,3 @@
-<script>
-window.onload = function() {
-  document.getElementById('back').style.display = 'none';
-};
-let longlat = function(){
-  console.log('longlat loading up!')
-  
-  let form = document.getElementById("form");
-  let latDiv = document.getElementById("latitude")
-  let longDiv = document.getElementById("longitude")
-  let createInput = document.createElement("input");
-  let createInputTwo = document.createElement("input");
-  let labelOne = document.createElement("label");
-  let labelTwo = document.createElement("label");
-  let cbd = document.getElementById("checkboxDiv");
-  let fgb = document.getElementById("fgb");
-  cbd.checked = false;
-  labelOne.innerHTML = "Latitude"
-  labelTwo.innerHTML = "Longitude"
-  createInput.type = "input";
-  createInput.id = "latitude";
-  createInput.name = "latitude";
-  createInput.classList.add("form-control");
-  createInput.placeholder = "Enter Latitude";
-  createInputTwo.type = "input";
-  createInputTwo.id = "longitude";
-  createInputTwo.name = "Longitude";
-  createInputTwo.classList.add("form-control");
-  createInputTwo.placeholder = "Enter Longitude";
-  latDiv.appendChild(labelOne);
-  latDiv.appendChild(createInput);
-  longDiv.appendChild(labelTwo);
-  longDiv.appendChild(createInputTwo);
-  cbd.style.display = 'none';
-  document.getElementById('back').style.display = 'block';
-  console.log()
-  console.log(createInput)
-  console.log('working!');
-}
-
-let gobackfunc = function(){
-  console.log("clicked")
-  let latDiv = document.getElementById("latitude");
-  let longDiv = document.getElementById("longitude");
-  let cb = document.getElementById("fgb");
-  latDiv.innerHTML = "";
-  longDiv.innerHTML = "";
-  document.getElementById('back').style.display = 'none';
-  document.getElementById('checkboxDiv').style.display = 'block';
-}
-</script>
 
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
@@ -102,14 +51,6 @@ let gobackfunc = function(){
             placeholder="Confirm Password"
             value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
           />
-        </div>
-        <div id="checkboxDiv">
-          <input type="checkbox" name="aap" value="" onChange="longlat()" id="aapCheck"> Are you an adopt-a-plotter?<br>
-        </div>
-        <div class="form-group" id="latitude"></div>
-        <div class="form-group" id="longitude"></div>
-        <div class="form-group" id="back">
-            <input type="checkbox" name="fgb" value="" onChange="gobackfunc()" id="fgb">Not an adopt-a-plotter?<br>
         </div>
         
         <button type="submit" class="btn btn-primary btn-block">
